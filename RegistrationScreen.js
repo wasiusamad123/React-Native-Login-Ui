@@ -248,7 +248,7 @@ export default function RegistrationScreen({ navigation }) {
     console.log('Confirm Password:', confirmPassword);
 
     // Redirect to Dashboard after successful registration
-    navigation.navigate('Dashboard');
+    navigation.navigate('Dashboard'); // Ensure the name matches the registered screen
   };
 
   return (
@@ -321,7 +321,9 @@ export default function RegistrationScreen({ navigation }) {
         </View>
         <Button title="Register" onPress={handleRegister} />
         <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-          <Text style={styles.link}>Already have an account</Text>
+          <Text style={styles.link}>
+            Already have an account? <Text style={{ fontWeight: 'bold', color: '#1e90ff' }}>Login here</Text>
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
